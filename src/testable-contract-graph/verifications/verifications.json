@@ -1,0 +1,28 @@
+[
+    {
+        "name": "isGitlabContainerAvailable",
+        "description": "tba",
+        "tests": [
+            {
+                "file": "isGitlabContainerAvailable.sh"
+            }
+        ]
+    },
+    {
+        "name": "isLocalRepoGitlabUIAvailable",
+        "description": "tba",
+        "tests": [
+            {
+                "file": "isLocalRepoGitlabUIAvailable.sh"
+            }
+        ]
+    },
+    {
+        "name": "isCredentialsKnown",
+        "description": "tba",
+        "tests": [
+            {
+                "file": "isCredentialsKnown.sh"            }
+        ]
+    }
+]

@@ -1,15 +1,14 @@
-# Testable Contract Graph
+# Testable Contract Graph. Simple What and How To.
 
 This is a tool for defining requirements, the dependencies between them, and the verifications needed to confirm each requirement is satisfied.
 
 _Start with the goal → work backward to understand dependencies → create tasks from the bottom up → define verification → ( verify → do the task → )_
 
 ```code
-contractTestableGraphProject
-├─ main
+src
+├─ contract-testable-graph
 │  ├─ contractGraph.md
 │  ├─ contractGraph-verified.md
-│  ├─ verify.js
 │  └─ verifications
 │     ├─ verification1.sh
 │     ├─ verification2.sh
