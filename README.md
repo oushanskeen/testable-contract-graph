@@ -1,9 +1,13 @@
 # Testable Contract Graph. Simple What and How To.
 
-This is a tool for defining requirements, the dependencies between them, and the verifications needed to confirm each requirement is satisfied.
+#### This tool provides a structured way to define requirements, understand their dependencies, and verify that each requirement is truly satisfied.
 
-_Start with the goal → work backward to understand dependencies → create tasks from the bottom up → define verification → ( verify → do the task → )_
+Initially created as part of another kata and aimed at solving tasks decomposition and the oversized git commits problem, it eventually evolved into its own standalone tool and technique, focused on thinking through dependencies, making work explicit, and preventing requirement drift.
 
+**The workflow is intentionally simple and iterative**:
+Start with the goal → work backward to understand dependencies → create tasks from the bottom up → define verification → ( verify → do the task → )
+
+<!-- 
 ```code
 src
 ├─ contract-testable-graph
@@ -14,7 +18,7 @@ src
 │     ├─ verification2.sh
 │     └─ verification3.sh
 ├─ …
-```
+``` -->
 
 ### Step #1: Start with the goal:
 
