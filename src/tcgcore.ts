@@ -21,6 +21,7 @@ const memory: any = {}
 const tcgcore = (mermaidGraphFileName: FileName, specFolder: SpecFolder) => {
 
     const getMermaidGraph = async (mermaidGraphFileName: FileName): Promise<GraphContent> => {
+        // console.log("__dirname: ", __dirname)
         const markdownContent = await fs.readFile(mermaidGraphFileName, "utf-8")
         // TODO: process this and other correspondent invariant asserts
         // console.assert(
@@ -60,10 +61,15 @@ const tcgcore = (mermaidGraphFileName: FileName, specFolder: SpecFolder) => {
     }
 
     const getVerifications = async (
-        testFileNames: TestFileName[],
+        {dependencies,specFolder}:{
         dependencies: DependencyPair[],
         specFolder: SpecFolder
+    }
     ): Promise<VerificationData[]> => {
+
+        // console.log("[getVerifications] testFileNames: ", testFileNames)
+        console.log("[getVerifications] dependencies: ", dependencies)
+        console.log("[getVerifications] specFolder: ", specFolder)
 
         async function runScriptInteractive(scriptPath: TestFileName): Promise<VerificationResult> {
             return new Promise((resolve, reject) => {
@@ -143,6 +149,7 @@ const tcgcore = (mermaidGraphFileName: FileName, specFolder: SpecFolder) => {
 
         return results;
     };
+
     const addVerificationResultToMermaid = async (
         { mermaidGraphFileName, verificationData }:
             {
@@ -222,7 +229,13 @@ const tcgcore = (mermaidGraphFileName: FileName, specFolder: SpecFolder) => {
             memo("verifications", async () => {
                 const tests = await $.tests_v()
                 const deps = await $.dependencies_v()
-                return $.getVerifications(tests, deps, specFolder)
+                return $.getVerifications(
+                    {
+                    dependencies: deps,
+                    specFolder: specFolder
+                    }
+                    // deps, specFolder
+                )
             }),
         verifiedMemaidRequirements_v: () =>
             memo("verifiedMermaid", async () => {

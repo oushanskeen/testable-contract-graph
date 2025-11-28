@@ -1,14 +1,14 @@
 ```mermaid
     stateDiagram-v2
 
-    isTcgModuleUsable --> isAllSimpleUnitTestsPass: ⬇️require
-    isAllSimpleUnitTestsPass --> isTcgModuleUsable: then
+    isTcgModuleUsable --> ✅isAllSimpleUnitTestsPass: ⬇️require
+    ✅isAllSimpleUnitTestsPass --> isTcgModuleUsable: then
 
-    isAllSimpleUnitTestsPass --> ✅isTcgModuleTestable: ⬇️require
-    ✅isTcgModuleTestable --> isAllSimpleUnitTestsPass: ⚒️addSimpleUnitTests
+    ✅isAllSimpleUnitTestsPass --> ✅isTcgModuleTestable: ⬇️require
+    ✅isTcgModuleTestable --> ✅isAllSimpleUnitTestsPass: ⚒️addSimpleUnitTests🟢
     %% added: 27.11.25T10:25
-    %% started: -
-    %% finished: -
+    %% started: 27.11.25T10:40
+    %% finished: 28.11.25T08:40
 
 
     ✅isTcgModuleTestable --> ✅isCLILogicSeparated : ⬇️require
