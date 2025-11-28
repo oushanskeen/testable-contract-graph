@@ -1,8 +1,31 @@
 ```mermaid
     stateDiagram-v2
 
+    isTcgReady --> isTcgIntentionClear: ⬇️require
+    isTcgReady --> isTcgModuleUsable: ⬇️require
+
+    isTcgIntentionClear --> isContextClear: ⬇️require
+    isContextClear --> isProblemClear: ⬇️require
+    isProblemClear --> isContextClear: thenMustBe
+    
+    isProblemClear --> isCustomerRiskClear: ⬇️require
+    isCustomerRiskClear --> isProblemClear: thenMustBe
+    
+    isContextClear --> isSolutionClear: ⬇️require
+    isSolutionClear --> isContextClear: thenMustBe
+
+    isSolutionClear --> isUseCasesClear: ⬇️require
+    isUseCasesClear --> isSolutionClear: thenMustBe
+
+    isSolutionClear --> isUseAtchitectureClear: ⬇️require
+    isUseAtchitectureClear --> isSolutionClear: thenMustBe
+
+    isSolutionClear --> isCurrentSolutionStateClear: ⬇️require
+    isCurrentSolutionStateClear --> isSolutionClear: thenMustBe
+    [*] --> isCurrentSolutionStateClear: ⚒️addSWOT
+
     isTcgModuleUsable --> ✅isAllSimpleUnitTestsPass: ⬇️require
-    ✅isAllSimpleUnitTestsPass --> isTcgModuleUsable: then
+    ✅isAllSimpleUnitTestsPass --> isTcgModuleUsable: thenMustBe
 
     ✅isAllSimpleUnitTestsPass --> ✅isTcgModuleTestable: ⬇️require
     ✅isTcgModuleTestable --> ✅isAllSimpleUnitTestsPass: ⚒️addSimpleUnitTests🟢
@@ -19,5 +42,8 @@
     %% started: 27.11.25T10:27
     %% finished: 27.11.25T10:32
 
+    [*] --> isCustomerRiskClear: ⚒️addRisks
+
+    %% [*] --> isVoiceOfCustomerClear: ⚒️addRisks
     
 ```
