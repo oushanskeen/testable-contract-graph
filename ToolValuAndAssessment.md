@@ -1,5 +1,7 @@
 # Tool Value & Assessment
 
+#### This document provides a brief overview of the tool: what it aims to solve, and what it currently provides.
+
 ### 🔴 User's Risks:
 **1. Ambiguous or oversized tasks**:
 	→ slow delivery

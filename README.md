@@ -4,6 +4,8 @@
 
 Initially created as part of another kata and aimed at solving tasks decomposition and the oversized git commits problem, it eventually evolved into its own standalone tool and technique, focused on thinking through dependencies, making work explicit, and preventing requirement drift.
 
+[_For a context details please take a look at an assessment doc_](./ToolValuAndAssessment.md)
+
 **The workflow is intentionally simple and iterative**:
 Start with the goal → work backward to understand dependencies → create tasks from the bottom up → define verification → ( verify → do the task → )
 
