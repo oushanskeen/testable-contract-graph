@@ -17,12 +17,21 @@
     isSolutionClear --> isUseCasesClear: ⬇️require
     isUseCasesClear --> isSolutionClear: thenMustBe
 
-    isSolutionClear --> isUseAtchitectureClear: ⬇️require
-    isUseAtchitectureClear --> isSolutionClear: thenMustBe
+    isUseCasesClear --> isUseArchitectureClear: ⬇️require
+    isUseArchitectureClear --> isUseCasesClear: ⚒️addWorkflow🟡
+    %% added: 27.11.25T11:20
+    %% started: -
+    %% finished: -
+
+    [*] --> isUseArchitectureClear: ⚒️addArchitecture🟡
+
 
     isSolutionClear --> isCurrentSolutionStateClear: ⬇️require
     isCurrentSolutionStateClear --> isSolutionClear: thenMustBe
-    [*] --> isCurrentSolutionStateClear: ⚒️addSWOT
+    [*] --> isCurrentSolutionStateClear: ⚒️addSWOT🔵
+    %% added: 27.11.25T10:25
+    %% started: 27.11.25T11:17
+    %% finished: -
 
     isTcgModuleUsable --> ✅isAllSimpleUnitTestsPass: ⬇️require
     ✅isAllSimpleUnitTestsPass --> isTcgModuleUsable: thenMustBe
